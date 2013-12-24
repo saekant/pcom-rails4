@@ -1,0 +1,66 @@
+		<div id='view'>
+		<h1>search protein</h1>
+			<table cellpadding="0" cellspacing="0" border="0" id="table" class="sortable">
+			<thead>
+				<tr>
+					<th style="width:90px"><h3>gene_id</h3></th>
+					<th style="width:120px"><h3>symbols</h3></th>
+					<th style="width:360px"><h3>description</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @msresults.each do |result| %>
+					<tr data-href="/proteins/search_protein?gene_id=<%= result.gene_id %>">
+						<td>
+							<%= link_to({:action => 'search_protein',:gene_id => result.gene_id }) do %>
+								<span class="widelink"><%= result.gene_id %></span>
+							<% end %>
+						</td>
+						<%if result.protein.symbols == "" %>
+						<td >　</td>
+					  <% else %>
+					 	<td ><%= result.protein.symbols.tr('#',',') %></td>
+					  <% end %>
+						<td ><%= result.protein.description.tr('#',',') %></td>
+						</tr>
+				<% end %>
+				</tbody>
+			</table>
+			
+			<div id="controls">
+				<div id="perpage">
+					<select onchange="sorter.size(this.value)">
+						<option value="10"  >10</option>
+						<option value="20" selected="selected">20</option>
+						<option value="50">50</option>
+						<option value="100">100</option>
+						<option value="200">200</option>
+					</select>
+					<span>Entries Per Page</span>
+			</div>
+
+			<div id="navigation">
+				<%= image_tag "sorter/first.gif",:width => "16",:height => "16",:alt => "First Page",:onclick => "sorter.move(-1,true)" %>
+				<%= image_tag "sorter/previous.gif",:width => "16",:height => "16",:alt => "Previous Page",:onclick => "sorter.move(-1)" %>
+				<%= image_tag "sorter/next.gif",:width => "16",:height => "16",:alt => "Next Page",:onclick => "sorter.move(1)" %>
+				<%= image_tag "sorter/last.gif",:width => "16",:height => "16",:alt => "Last Page",:onclick => "sorter.move(1,true)" %>
+			</div>
+		<div id="text">Displaying Page <span id="currentpage"></span> of <span id="pagelimit"></span></div>
+
+		</div>
+		</div> 
+		<script>
+			var sorter = new TINY.table.sorter("sorter");
+			sorter.head = "head";
+			sorter.asc = "asc";
+			sorter.desc = "desc";
+			sorter.even = "evenrow";
+			sorter.odd = "oddrow";
+			sorter.evensel = "evenselected";
+			sorter.oddsel = "oddselected";
+			sorter.paginate = true;
+			sorter.currentid = "currentpage";
+			sorter.limitid = "pagelimit";
+			sorter.init("table",0);
+		</script>
+

@@ -1,0 +1,36 @@
+		<div id='view'>
+		<h1><%= @title %></h1>
+		<%= form_tag({ :action => :search_protein }, { :id => :search_key_form_by_gene_id,:name => :search_key_form_by_gene_id }) do %>
+			<table class="key_table">
+				<tr>
+					<td class="posttext">　1>　</td>
+					<td class="posttext">gene_id: <a href="javascript:void(window.open('/proteins/help_geneId', 'help_gene_id', 'width=400, height=380, menubar=no, toolbar=no, scrollbars=no,location=no, resizable=no'));"><%= image_tag "help1.gif",:class=> "geneId_help" %></a></td>
+					<td class="posttext"><%= text_field_tag :search_gene_id ,'' ,{ :class => 'gene_id',:maxlength => '15', :onBlur => 'check_gene_id(this)' } %></td>
+					<td class="posttext"><%= check_box_tag 'arabi_homolog_flg',true,false,{} %>:including homolog</td>
+					<td><%= submit_tag 'search 1', :id =>"search_button",:class=> "button1",:onClick=> "check_gene_id(this);setURL();"%></td>
+				</tr>
+			</table>
+		<% end %>
+
+			<%= form_tag({ :action => :search_material_protein }, { :id => :search_key_form_by_symbols_or_description,:name => :search_key_form_by_symbols_or_description }) do %>
+			<table class="key_table">
+				<tr>
+					<td class="posttext" rowspan="2">　2>　</td>
+					<td class="posttext">symbols:</td>
+					<td ><%= text_field_tag :symbols ,@symbols,{ :class => 'symbols',:maxlength => '200'} %></td>
+					<td rowspan="2"><%= submit_tag 'search 2', :id =>"search_button",:class=> "button1" %></td>
+				</tr>
+				<tr>
+					<td class="posttext">description:</td>
+					<td ><%= text_field_tag :description ,@description,{ :class => 'description',:maxlength => '200' } %></td>	
+				</tr>
+			</table>
+			<% end %>
+
+		<script>
+		function setURL() {
+			document.search_key_form_by_gene_id.action ="/proteins/search_protein?search_gene_id="+document.search_key_form_by_gene_id.search_gene_id.value;
+		}
+		</script>
+	
+		</div> 

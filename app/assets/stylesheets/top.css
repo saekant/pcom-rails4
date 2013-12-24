@@ -1,0 +1,167 @@
+/* ==================== body ==================== */
+* {margin:0; padding:0; outline:none}
+*{ margin:0;padding:0;list-style-type:none;outline:none}
+
+#body_top {	font-family: "Trebuchet MS",Verdana, Helvetica, ,Arial,sans-serif;font-size: x-small;line-height: 18px;color:#505050;background-image: url(/assets/PPCMD1.png);background-repeat: no-repeat;background-position: right top;background-position: 100％ 0％;background-attachment: fixed;}
+#body_normal {	font-family: "Trebuchet MS",Verdana, Helvetica, ,Arial,sans-serif;font-size: x-small;line-height: 18px;color:#505050;}
+p, ol, ul {font-family: Verdana, Helvetica, ,Arial,sans-serif;font-size:   13px;line-height: 18px;}
+/* ==================== layout ==================== */
+#container	{	width: 600px;margin: auto;}
+#content		{	margin: 10px 0;position:relative; z-index: 0;}
+/* ================= header ==================== */
+#header_top			{	width: auto;height: 190px;}
+#header_normal	{	width: auto;height: 50px;}
+#header_inner	{		padding: 10px;position:relative; z-index: 3;}
+#header h1		{	background:url(/assets/yuki.gif);}
+#header h2		{	margin: 0;margin-top: 10px;font-size: 4em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+#header h3		{	margin: 0;font-size: 2em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+#header h4		{	margin: 0;font-size: 15px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+#header h5		{	margin: 0;font-size: 12px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+#header h6		{	margin: 0;font-size: 10px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+#header p			{	margin: 0;margin-top: 8px;font-size: 1em;			}
+/* ==================== contents ==================== */
+.post		{width: auto;}
+.post h2	{font-size: 1em;margin: 0;margin-bottom: 15px;background-color: #b8e964;line-height: 32px;padding-left: 10px;}
+.posttext	{font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;line-height: 1.5}
+.posttext p	{margin-left:10px;padding-left: 10px;margin-right:10px;padding-right: 10px;}
+.t3					{	margin: 0;margin-left:10px;font-size: 1.3em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+.t4					{	margin: 0;margin-left:10px;font-size: 0.8em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050}
+.footnote			{	margin: 0;margin-top:5px;margin-right:15px;padding-right: 15px;line-height: 1.5;font-size: 0.8em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;background-color: transparent;color:#505050;text-align: center;vertical-align: top;text-align: justify;}
+/* ==================== footer	 ==================== */
+#footer		{	width: auto;border-top: solid 5px #6aa512;padding-top: 10px;padding-bottom: 20px;margin-right:10px;margin-left:10px;}
+#footer p	{	color: #000000;font-size: x-small;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;margin: 0;}
+
+/* ==================== menu ==================== */
+ul.menu li{float:left;width:192px;height:28px;background:url(/assets/btn1.png);position:relative;font-size:small;z-index: 2; }
+* html ul.menu li{display:inline;zoom:1;z-index: 2;}
+*+html ul.menu li{display:inline;zoom:1;z-index: 2;}
+ul.menu li a{display:block;width:100%;height:100%;font-size: 0.9em;line-height:26px;text-indent:24px;font-weight:bold;color:#CFDFB5;text-decoration:none;font-family: "Trebuchet MS", Arial, sans-serif;position:relative;z-index: 2;}
+ul.menu li a:hover{background:url(/assets/btn_over1.png);z-index: 2;}
+ul.sub{display:none;z-index: 2;}
+* html ul.sub{zoom:1;position:relative;z-index: 2;}
+*+html ul.sub{zoom:1;position:relative;z-index: 2;}
+ul.sub li{float:none;z-index: 2;}
+ul.sub li ul.sub{position:absolute;left:192px;top:0;z-index: 2;}
+ul.menu		{zoom:1;
+//add
+				line-height:26px;text-indent:24px;font-weight:bold;font-size: 1em;color:#CFDFB5;text-decoration:none;font-family: "Trebuchet MS", Arial, sans-serif;position:relative;z-index: 2;
+//add
+			}
+ul.menu:after {height:0;visibility:hidden;content:".";display:block;clear:both;z-index: 2;}
+
+/* ==================== item/image========================= */
+.itm { margin-top:5px;margin-left:55px;list-style-image: url(/assets/yajirushi_green01.jpg); font-weight:bold;}
+.itm2 {width: 50px;margin-left:10px;margin-top:5px;margin-bottom:15px;margin-right:10px;}
+img.overview { width: 280px;margin-left:10px;margin-top:5px;vertical-align: top;}
+img.overview2 { width: 360px;margin-left:10px;margin-top:5px;vertical-align: top;}
+.geneId_help { border: none; position : relative ;margin-top:2px}
+/* ==================== link	 ==================== */
+a.widelink {display: block;width: 100%;text-decoration: none; }
+span.widelink {display: block;width: 100%;color:#505050;font-size: small;font-family: Verdana, Helvetica, sans-serif;text-decoration: none;}
+
+/* ==================== list table ==================== */
+#controls {width:572px; margin:0 auto; height:20px}
+#perpage {float:left; width:170px}
+#perpage select {float:left; font-size:11px}
+#perpage span {float:left; margin:2px 0 0 5px}
+#navigation {float:left; width:200px; text-align:center}
+#navigation img {cursor:pointer}
+#text {float:left; width:200px; text-align:right; margin-top:2px}
+
+.sortable {width:572px; border:1px solid #dcdcdc; margin:0 auto 15px;}
+.sortable th {background-color:#d3d3d3; text-align:center; color:#505050; border:1px solid #fff; border-right:none}
+.sortable th h3 {font-size:12px; padding:6px 8px 8px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;}
+//.sortable th {background-color:#d3d3d3; text-align:center; color:#505050; border:1px solid #fff; border-right:none;font-size:13px; padding:6px 8px 8px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-weight:bold;}
+.sortable td {padding:2px 4px 4px; border-bottom:1px solid #dcdcdc; border-right:1px solid #dcdcdc;font-family: Verdana, Helvetica, sans-serif;font-size: small;}
+.sortable .head h3 {background:url(/images/sorter/sort.gif) center no-repeat; cursor:pointer; padding-left:3px}
+.sortable .desc, .sortable .asc {background-color:#c0c0c0}
+.sortable .desc h3 {background:url(/assets/sorter/desc.gif) 7px center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .asc h3 {background:url(/assets/sorter/asc.gif) 7px  center no-repeat; cursor:pointer; padding-left:18px}
+.sortable .head:hover, .sortable .desc:hover, .sortable .asc:hover {color:#fff}
+.sortable .body:hover {background:#ccccff;}
+.sortable .evenrow td {background:#fff}
+.sortable .oddrow td {background:#fafafa}
+.sortable td.evenselected {background:#fafafa}
+.sortable td.oddselected {background:#f5f5f5}
+
+.sortable th.blank {width: 10px;}
+.sortable th,td .gene_id {width: 70px;}
+.sortable th,td .emPAI {width: 35px;}
+.sortable th.td .mw {width: 35px;}
+.sortable th,td .symbols {width: 80px;}
+.sortable th,td .description {width: 380px;}
+.sortable th,td .description2 {width: 420px;}
+.sortable  .number {text-align: right; }
+.sortable  td .number {text-align: right; }
+
+table.key_table	{margin:10px;padding: 0px;font-size: small;}
+/* ==================== view title ==================== */
+#view h1	{	margin: 10px;margin-top: 50px;padding: 10px;font-size: large;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;color:#505050;font-weight:bold;background:url(/assets/a2208.gif);background-repeat: no-repeat;background-position: left bottom}
+#view h2	{	margin: 10px;margin-top: 10px;padding: 10px;font-size: large;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;color:#505050;font-weight:bold;background:url(/assets/a2208.gif);background-repeat: no-repeat;background-position: left bottom}
+
+#mode_on	{	margin: 10px;margin-top: 50px;padding: 10px;font-size: 0.8em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;color:#ff8080;text-decolation: none; }
+#mode_off	{	margin-left: 10px;margin-top: 50px;font-size: 0.8em;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;color:#e0e0e0;text-decolation: none; }
+/* ==================== button ==================== */
+input.button1{font-size: small;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;	}
+/* ==================== text ==================== */
+input.gene_id{font-size: small;font-family: Verdana, Helvetica, sans-serif;width:120px;text-align: left;}
+input.symbols{font-size: small;font-family: Verdana, Helvetica, sans-serif;width:250px;text-align: left;}
+input.description{font-size: small;font-family: Verdana, Helvetica, sans-serif;width:250px;text-align: left;}
+/* ==================== checkbox ==================== */
+input.checkbox_checked{font: italic bold 100%color:#505050;background-color:#ccccff;}
+/* ==================== chart ===================== */
+#chart		{width: 572px;height: 400pxmargin: 0 auto; z-index  : 0;}
+/* ==================== mas table ==================== */
+table.mas_table	{margin:10px;padding: 10px;width:572px;border-style: ridge;border-width: 1px;border-collapse: collapse;empty-cells: show;}
+table.mas_table td.material_name{background-color:#EEE9E9;height:45px;width:92px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;}
+table.mas_table td.gel60_level0{background-color:#FFFFFF;width:8px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel60_level1{background-color:#FFC0CB;width:8px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel60_level2{background-color:#FF69B4;width:8px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel60_level3{background-color:#FF0000;width:8px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel68_level0{background-color:#FFFFFF;width:7px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel68_level1{background-color:#FFC0CB;width:7px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel68_level2{background-color:#FF69B4;width:7px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel68_level3{background-color:#FF0000;width:7px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel80_level0{background-color:#FFFFFF;width:6px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel80_level1{background-color:#FFC0CB;width:6px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel80_level2{background-color:#FF69B4;width:6px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel80_level3{background-color:#FF0000;width:6px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel53_level0{background-color:#FFFFFF;width:9px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel53_level1{background-color:#FFC0CB;width:9px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel53_level2{background-color:#FF69B4;width:9px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel53_level3{background-color:#FF0000;width:9px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel43_level0{background-color:#FFFFFF;width:11px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel43_level1{background-color:#FFC0CB;width:11px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel43_level2{background-color:#FF69B4;width:11px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel43_level3{background-color:#FF0000;width:11px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel48_level0{background-color:#FFFFFF;width:10px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel48_level1{background-color:#FFC0CB;width:10px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel48_level2{background-color:#FF69B4;width:10px;border-style: solid;border-width: 1px;}
+table.mas_table td.gel48_level3{background-color:#FF0000;width:10px;border-style: solid;border-width: 1px;}
+
+/* ==================== .legend table ==================== */
+table.legend_table	{	width:572px;empty-cells: show;}
+table.legend_table td.level0{background-color:#FFFFFF;width:30px;height:45px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;text-align: center;}
+table.legend_table td.level1{background-color:#FFC0CB;width:30px;height:45px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;text-align: center;}
+table.legend_table td.level2{background-color:#FF69B4;width:30px;height:45px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;text-align: center;}
+table.legend_table td.level3{background-color:#FF0000;width:30px;height:45px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;text-align: center;}
+table.legend_table td.blank{background-color:#FFFFFF;width:450px;}
+
+/* ==================== .weight table ==================== */
+table.weight_table	{margin:10px;padding: 10px;width:572px;border-style: ridge;border-width: 1px;border-collapse: collapse;empty-cells: show;}
+table.weight_table td.colm_name{background-color:#EEE9E9;height:10px;width:40px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: xx-small;}
+table.weight_table td.gel68{background-color:#FFFFFF;width:8px;border-style: none;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: x-small;}
+table.weight_table td.gel60{background-color:#FFFFFF;width:9px;border-style: none;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: x-small;}
+table.weight_table td.gel48{background-color:#FFFFFF;width:11px;border-style: none;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: x-small;}
+
+/* ==================== .help table ====================== */
+table.help_table	{margin:10px;padding: 10px;width:380px;border-style: solid;border-width: 1px;border-collapse: collapse;empty-cells: show;}
+table.help_table th{background-color:#EEE9E9;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;}
+table.help_table td.colm_name{background-color:#FFFFFF;width:190px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;margin:10px;padding: 10px;}
+table.help_table td.example{background-color:#FFFFFF;width:190px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;margin:10px;padding: 10px;}
+
+/* ==================== .resources table ================== */
+table.resources_table	{margin:10px;padding: 10px;width:572px;border-style: solid;border-width: 1px;border-collapse: collapse;empty-cells: show;}
+table.resources_table th{	background-color:#EEE9E9;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;}
+table.resources_table td.organism{	background-color:#FFFFFF;width:190px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;margin:10px;padding: 10px;}
+table.resources_table td.data{	background-color:#FFFFFF;width:382px;border-style: solid;border-width: 1px;font-family: "Trebuchet MS",Verdana, Helvetica, sans-serif;font-size: small;margin:10px;padding: 10px;}

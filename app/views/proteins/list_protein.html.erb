@@ -1,0 +1,127 @@
+		<div id='view'>
+		<h1><%= @material.material_name %></h1>
+
+		<%= form_tag({ :action => :search_list_protein_by_gene_id }, { :id => :search_key_form_by_gene_id,:name => :search_key_form_by_gene_id }) do %>
+			<%= hidden_field_tag :material_id, @material.id %>
+				<table class="key_table">
+					<tr>
+						<td class="posttext">　1>　</td>
+						<td class="posttext">gene_id: <a href="javascript:void(window.open('/proteins/help_geneId', 'help_gene_id', 'width=400, height=380, menubar=no, toolbar=no, scrollbars=no,location=no, resizable=no'));"><%= image_tag "help1.gif",:class=> "geneId_help" %></a></td>
+						<td><%= text_field_tag :search_gene_id ,@search_gene_id,{ :class => 'gene_id',:maxlength => '15', :onBlur => 'check_gene_id(this)' } %></td>
+						<td><%= submit_tag 'search 1', :id =>"search_button1",:class=> "button1",:onClick=> "check_gene_id(this);" %></td>
+					</tr>
+				</table>
+		<% end %>
+
+		<%= form_tag({ :action => :search_list_protein_by_symbols_or_description }, { :id => :search_key_form_by_symbols_or_description,:name => :search_key_form_by_symbols_or_description }) do %>
+			<%= hidden_field_tag :material_id, @material.id %>
+
+			<table class="key_table">
+				<tr>
+					<td class="posttext" rowspan="2">　2>　</td>
+					<td class="posttext">symbols:</td>
+					<td ><%= text_field_tag :symbols ,@search_symbols,{ :class => 'symbols',:maxlength => '200'} %></td>
+					<td rowspan="2"><%= submit_tag 'search 2', :id =>"search_button2",:class=> "button1" %></td>
+				</tr>
+				<tr>
+					<td class="posttext">description:</td>
+					<td ><%= text_field_tag :description ,@search_description,{ :class => 'description',:maxlength => '200' } %></td>	
+				</tr>
+				
+			</table>
+			<% end %>
+
+			<%if @material.organism.id !=1 %>
+			<table id="table" class="sortable">
+			<thead>
+				<tr>
+					<th style="width:45px"><h3>gene_id</h3></th>
+					<th style="width:60px"><h3>symbols</h3></th>
+					<th style="width:180px"><h3>description</h3></th>
+					<th style="width:45px"><h3>Arabidopsis<br>gene_id</h3></th>
+					<th style="width:60px"><h3>Arabidopsis<br>symbols</h3></th>
+					<th style="width:180px"><h3>Arabidopsis<br>description</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @list_protein.each do |result| %>
+					<tr>
+						<td><div id="no-turbolinks" data-no-turbolink>
+							<%= link_to({:action => 'getchart',:main_gene_id => result.gene_id,:material_id => @material.id,:gene_id_str => "",:mode => "1" }) do %><div>
+								<span class="widelink"><%= result.gene_id %></span>
+							<% end %>
+						</td>
+						<td ><%if result.protein.symbols == "" %>　<% else %><%= result.protein.symbols.tr('#',',') %><% end %></td>
+						<td ><%if result.protein.description == "" %>　<% else %><%= result.protein.description.tr('#',',') %><% end %></td>
+						<td><%if result.protein.arabi_gene_id == "" %>　<% else %><%= result.protein.arabi_gene_id %><% end %></td>
+						<td><%if result.protein.arabi_symbols == "" %>　<% else %><%= result.protein.arabi_symbols.tr('#',',') %><% end %></td>
+						<td><%if result.protein.arabi_description == "" %>　<% else %><%= result.protein.arabi_description.tr('#',',') %><% end %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+
+			<% else %>
+			<table id="table" class="sortable">
+			<thead>
+				<tr>
+					<th style="width:90px"><h3>gene_id</h3></th>
+					<th style="width:120px"><h3>symbol</h3></th>
+					<th style="width:360px"><h3>description</h3></th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @list_protein.each do |result| %>
+					<tr>
+						<td>
+							<%= link_to({:action => 'getchart',:main_gene_id => result.gene_id,:material_id => @material.id,:gene_id_str => "",:mode => "1" }) do %>
+								<span class="widelink"><%= result.gene_id %></span>
+							<% end %>
+						</td>
+						<td ><%if result.protein.symbols == "" %>　<% else %><%= result.protein.symbols.tr('#',',') %><% end %></td>
+						<td ><%if result.protein.description == "" %>　<% else %><%= result.protein.description.tr('#',',') %><% end %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+			<% end %>
+			
+			<div id="controls">
+				<div id="perpage">
+					<select onchange="sorter.size(this.value)">
+						<option value="10"  >10</option>
+						<option value="20" selected="selected">20</option>
+						<option value="50">50</option>
+						<option value="100">100</option>
+						<option value="200">200</option>
+					</select>
+					<span>Entries Per Page</span>
+			</div>
+			<div id="navigation">
+				<%= image_tag "sorter/first.gif",:width => "16",:height => "16",:alt => "First Page",:onclick => "sorter.move(-1,true)" %>
+				<%= image_tag "sorter/previous.gif",:width => "16",:height => "16",:alt => "Previous Page",:onclick => "sorter.move(-1)" %>
+				<%= image_tag "sorter/next.gif",:width => "16",:height => "16",:alt => "Next Page",:onclick => "sorter.move(1)" %>
+				<%= image_tag "sorter/last.gif",:width => "16",:height => "16",:alt => "Last Page",:onclick => "sorter.move(1,true)" %>
+			</div>
+		<div id="text">Displaying Page <span id="currentpage"></span> of <span id="pagelimit"></span></div>
+	</div>
+
+		<script>
+			var sorter = new TINY.table.sorter("sorter");
+			sorter.head = "head";
+			sorter.asc = "asc";
+			sorter.desc = "desc";
+			sorter.even = "evenrow";
+			sorter.odd = "oddrow";
+			sorter.evensel = "evenselected";
+			sorter.oddsel = "oddselected";
+			sorter.paginate = true;
+			sorter.currentid = "currentpage";
+			sorter.limitid = "pagelimit";
+			sorter.init("table",0);
+		</script>
+
+		</div> 
+
+
+

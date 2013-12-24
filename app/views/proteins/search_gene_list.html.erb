@@ -1,0 +1,363 @@
+		<div id='view'>
+		 <h1><%= @material.material_name %></h1>
+		 	<table class="legend_table">
+				<tr>
+					<td class="blank"></td>
+					<td class="level0">0</td>
+					<td class="level1">low</td>
+					<td class="level2">middle</td>
+					<td class="level3">high</td>
+				</tr>
+			</table>
+
+<%if @protein1.nil? %>
+		<%if @gene_list_len >= 1 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results1_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		  <% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein1.gene_id %>　／symbols　　　: <%= @protein1.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein1.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein1.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results1_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein1.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein1.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults1.each do |result| %>
+								<%if result == "0" %>
+									<td class="gel<%= @material.grid_disp%>_level0"></td>
+								<% elsif result == "1" %>
+									<td class="gel<%= @material.grid_disp%>_level1"></td>
+								<% elsif result == "2" %>
+									<td class="gel<%= @material.grid_disp%>_level2"></td>
+								<% elsif result == "3" %>
+									<td class="gel<%= @material.grid_disp%>_level3"></td>
+								<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein1.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein2.nil? %>
+		<%if @gene_list_len >= 2 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results2_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		  <% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein2.gene_id %>　／symbols　　　: <%= @protein2.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein2.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein2.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results2_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein2.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein2.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults2.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein2.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein3.nil? %>
+		<%if @gene_list_len >= 3 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results3_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein3.gene_id %>　／symbols　　　: <%= @protein3.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein3.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein3.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results3_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein3.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein3.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults3.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein3.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein4.nil? %>
+		<%if @gene_list_len >= 4 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results4_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein4.gene_id %>　／symbols　　　: <%= @protein4.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein4.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein4.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results4_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein4.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein4.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults4.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein4.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein5.nil? %>
+		<%if @gene_list_len >= 5 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results5_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein5.gene_id %>　／symbols　　　: <%= @protein5.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein5.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein5.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results5_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein5.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein5.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults5.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein5.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein6.nil? %>
+		<%if @gene_list_len >= 6 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results6_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein6.gene_id %>　／symbols　　　: <%= @protein6.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein6.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein6.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results6_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein6.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein6.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults6.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein6.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein7.nil? %>
+		<%if @gene_list_len >= 7 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results7_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein7.gene_id %>　／symbols　　　: <%= @protein7.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein7.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein7.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results7_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein7.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein7.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults7.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein7.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein8.nil? %>
+		<%if @gene_list_len >= 8 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results8_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein8.gene_id %>　／symbols　　　: <%= @protein8.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein8.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein8.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results8_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein8.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein8.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults8.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein8.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein9.nil? %>
+		<%if @gene_list_len >= 9 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results9_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein9.gene_id %>　／symbols　　　: <%= @protein9.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein9.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein9.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results9_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein9.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein9.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults9.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein9.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+<%if @protein10.nil? %>
+		<%if @gene_list_len >= 10 %>
+			<div class="posttext">
+		  		<p>The query (Input value "<%= @results10_err %>") was not found in the genome database. Try another query.</p>
+		  	</div>
+		<% end %>
+	<% else %>		
+			<div class="posttext">
+				<p>gene_id　　　  : <%= @protein10.gene_id %>　／symbols　　　: <%= @protein10.symbols.tr('#',',') %></p>
+				<p>description　　: <%= @protein10.description.tr('#',',') %></p>
+			</div>
+			<table class="mas_table" >
+				<tr data-href="/proteins/getchart?main_gene_id=<%= @protein10.gene_id %>&amp;gene_id_str=<%= @gene_id_str%>&amp;material_id=<%= @material.id %>&amp;mode=1">
+				<%if @results10_exists == true %>
+						<td class="material_name">
+							<%=link_to(@protein10.gene_id,{ :controller => "proteins",:action => "getchart",:material_id => @material.id,:main_gene_id =>@protein10.gene_id,:gene_id_str =>@gene_id_str,:class=> "widelink",:mode => "1" }) %>
+						</td>
+						<% @msresults10.each do |result| %>
+							<%if result == "0" %>
+								<td class="gel<%= @material.grid_disp%>_level0"></td>
+							<% elsif result == "1" %>
+								<td class="gel<%= @material.grid_disp%>_level1"></td>
+							<% elsif result == "2" %>
+								<td class="gel<%= @material.grid_disp%>_level2"></td>
+							<% elsif result == "3" %>
+								<td class="gel<%= @material.grid_disp%>_level3"></td>
+							<% end %>
+						<% end %>
+					<% else %>
+						<td class="material_name"><%= @protein10.gene_id %> :   no data</td>
+					<% end %>
+				</tr>
+			</table>
+<% end %>
+
+		</div> 

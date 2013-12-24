@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title><%= @title? @title :'PCoM' %></title>
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<%= stylesheet_link_tag "application", media: "all","data-turbolinks-track" => true %>
+		<%= javascript_include_tag "application","data-turbolinks-track" => true %>
+		<%= csrf_meta_tag %>
+</head>
+<body id ="body_top">
+<script>
+		$("ul.menu li").hover(function() {
+				$(">ul:not(:animated)",this).slideDown("fast");
+				},
+				function(){$(">ul",this).slideUp("fast");
+		});
+</script>
+<div id="container">
+<div id="head_top">
+<div id="header">
+<div id="header_inner">
+	<table style="width572px;" >
+		<tr><td><%= image_tag "title.png",:width => '512' %></td></tr>
+		<tr><td align="right"><h6>last update:2013.09.13</h6></td></tr>
+	</table>
+	<br>
+		<%= render 'layouts/menu' %>
+</div>
+</div>
+</div>
+
+<div id="content">
+		<%= yield %>
+</div>
+<div id="foot">
+	<%= render 'layouts/foot' %>
+</div>
+</body>
+</html>

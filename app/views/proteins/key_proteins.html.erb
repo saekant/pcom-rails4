@@ -1,0 +1,29 @@
+		<div id='view'>
+		<h1><%= @title %></h1>
+
+	<%= form_tag({ :action => :search_gene_list }, { :id => :search_key_form_by_gene_list,:name => :search_key_form_by_gene_list }) do %>
+				<table class="key_table">
+				<tr>
+					<td class="posttext">sample:</td>
+					<td ><%= select_tag('material_id',option_groups_from_collection_for_select(@organisms,:materials,:organism_name,:id,:material_name))%></td>
+					<td ></td>
+				</tr>
+				<tr>
+					<td class="posttext">gene_id:</td>
+					<td ><%= text_area_tag( "gene_id_list","",:cols =>10,:rows =>10)%></td>	
+					<td valign="bottom"><%= submit_tag 'search', :id =>"search_button",:class=> "button1", :onClick=> "getText();"%></td>
+				</tr>
+			</table>
+			<% end %>
+		</div> 
+<script language=javascript>
+function getText() {
+	var input_text = document.getElementById('gene_id_list').value;
+	var str	= input_text.replace(/\r\n|\r|\n/g,",")
+	var arr = str.split(",");
+	if(arr.length>10){
+		alert("A maximum of ten gene_id can be input");
+		return;
+	}
+}
+</script>

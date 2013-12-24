@@ -1,0 +1,119 @@
+<div id="view">
+<h1>Overview</h1>
+<div class="posttext">
+<br>
+<h3 class="t3">What is PCoM?</h3>
+<p>Protein Co-Migration Database for photosynthetic organisms (PCoM) is a powerful tool for predicting the protein complexes in photosynthetic organisms containing your protein of interest. PCoM stores the data obtained by LC-MS/MS analysis of the protein complexes which were separated by BN-PAGE and extracted from BN-PAGE gel slices.</p>
+<br>
+<table>
+<tr><td colspan="2">
+<h4 class="t4">《Overview of the approach used in PCoM》</h4>
+</td></tr>
+<tr><td><a href="/assets/top1.png" rel="lightbox">
+<%= image_tag "top1.png", :class => "overview", :alt => "overview" %>
+</a></td>
+<td class="footnote">
+<br>
+PCoM uses the approach using the Blue-Native PAGE (BN-PAGE) coupled with LC-MS/MS. First, protein complexes were solubilized and separated by BN-PAGE. Second, a BN-gel lane was horizontally cut into about 60 slices from top to just before the dye front, and the proteins in each BN-gel slice were in-gel digested with trypsin. Then, proteins extracted from each gel slice were identified by LC-MS/MS.
+</td>
+</tr>
+</table>
+<br>
+
+<h3 class="t3">What can users do with PCoM?</h3>
+<p>PCoM can show protein migration profiles across the BN-gel slices, which are generated based on the estimation of the protein abundances by the label-free semi-quantitative method, Exponentially modified protein abundance index (emPAI). The migration profile of each protein is good correlated with its band pattern on the BN-PAGE; the gel slice number of each peak is good correlated with the migration distance of the corresponding protein complex and the emPAI of each peak is good correlated with the accumulation level of the corresponding protein complex</p>
+<br>
+<table>
+<tr><td colspan="2"><h4 class="t4">《Concept of the protein migration profile for predicting protein complexes》</h4></td></tr>
+<tr>
+<td><a href="/assets/top2.png" rel="lightbox">
+<%= image_tag "top2.png", :class => "overview", :alt => "overview" %>
+</a></td>
+<td class="footnote">
+<br>
+The protein migration profiles, which were assessed by the label-free estimation of protein abundances across the gel slices (ordered top to bottom) in BN-PAGE, were useful for predicting protein complexes. The peaks in protein migration profiles were well correlated with the bands in their separation patterns in BN-PAGE.
+</td>
+</tr>
+</table>
+<br>
+<p>Therefore, protein migration profiles provides users following information on protein complexes in model photosynthetic organisms;
+</p>
+<br>
+<p>1. The number of the protein complexes containing a protein of interest</p>
+<p>2. The estimated molecular sizes of the protein complexes containing a protein of interest</p>
+<p>3. The relative accumulation levels of each protein complex containing a protein of interest.</p>
+<br>
+<p>In addition, users can obtain the list of the proteins that are possibly interacted with a protein of interest, based on the assumption that the proteins whose peaks in their profiles were overlapped in the same gel slice are possibly interacted each other. Especially, the overall profiles of two proteins are similar, they are possibly the subunits in the same protein complex.</p>
+<br>
+<table>
+<tr><td colspan="2"><h4 class="t4">《Example: Rubisco in Chalmydomonas cells》</h4></td></tr>
+<tr>
+<td><a href="/assets/top3.png" rel="lightbox"><%= image_tag "top3.png", :class => "overview", :alt => "overview2" %></a></td>
+<td class="footnote">
+<br>
+Rubisco forms tetramer of heterodimers. The migration profiles of RbcL and RbcS proteins in Chlamydomonas had the single peak at gel slice 32 (around 500kDa), corresponding to tetramer of dimers. Notably, Rubisco in Arabidopsis and Synechocystis also showed the similar migration profiles.
+</td>
+</tr>
+</table>
+<br>
+<h3 class="t3">Which proteins can be searched ?</h3>
+
+<p>At present, PCoM stores the following data for the protein complexes.</p>
+<br>
+<ul>
+<li class="itm">Arabidopsis thylakoids
+<li class="itm">Chlamydomonas whole cells
+<li class="itm">Synechocystis PCC6803 whole cells
+</ul> 
+<br>
+<p>Furthermore, we have plans to analyze the other organelles or tissues in Arabidopsis, and the other photosynthetic organisms. In the near future, we will add such data to this database.</p>
+<br>
+<h3 class="t3">How to use PCoM</h3>
+<p>Locus ID (for example: AT1G00010 for Arabidopsis, Cre01.g001350 for Chlamydomonas, and sll0611 for Synechocystis PCC6803) can be submitted to PCoM for searching database. </p>
+<br>
+<table>
+<tr><td colspan="2">
+<h4 class="t4">《Search window》</h4>
+</td></tr>
+<tr><td><a href="/assets/top4.png" rel="lightbox"><%= image_tag "top4.png", :class => "overview", :alt => "overview2" %></a></td>
+<td class="footnote">
+<br>
+Users can search proteins by typing a Locus ID. Alternatively, users can type a gene symbol (RbcL) or a gene description (Ribulose bisphosphate carboxylase). 
+</td>
+</tr>
+</table>
+<br>
+<p>Alternatively, users can select a protein from the protein list including all of the identified proteins by LC-MS/MS. After selecting or searching a protein, the protein migration profile will be displayed. Users can see the list of the proteins identified in each gel slice by clicking on each data point on the profile. After selecting proteins from the list, users can compare the profile of the protein of interest with those of the selected proteins.</p>
+<br>
+<table>
+<tr><td colspan="2">
+<h4 class="t4">《Browse window》</h4>
+</td></tr>
+<tr><td><a href="/assets/top5.png" rel="lightbox"><%= image_tag "top5.png", :class => "overview", :alt => "overview2" %></a></td>
+<td class="footnote">
+<br>
+Users can select proteins from the list of identified proteins in a sample, after selecting a sample name in browse window. In this version, samples of Arabidopsis thylakoids, Chlamydomonas cells, and Synechocystis PCC6803 cells can be selected.
+</td>
+</tr>
+</table>
+<br>
+<h3 class="t3">References</h3>
+<p>If you will find that this database is useful, please cite the following publications;</p>
+<br>
+<table  style="margin-left:15px">
+<tr><td>
+<%= image_tag "drawing.png",:width => "40" %>
+</td><td>
+<p><b>『PCoM-DB: Protein co-migaration database for comprehensive identification of novel protein complexes in photosynthetic organisms.』 (submitted)</b></p>
+</td></tr>
+</table>
+<br>
+
+<h3 class="t3">Contact us</h3>
+<p><a href="mailto:Takabayashi@pop.lowtem.hokudai.ac.jp"><%= image_tag "16.png",:width => "40" %>Takabayashi@pop.lowtem.hokudai.ac.jp</a></p>
+<br>
+
+</div>
+</div>
+
+

@@ -1,0 +1,61 @@
+		<div id='view'>
+
+			<!-- click gel_no&gene_id -->
+			<h1><%= @title %>
+				<%if  @mode == "1" %>
+						<span id='mode_on'> normal</span>
+					<%= link_to({:action => 'getchart',:main_gene_id => @protein.gene_id,:material_id => @material.id,:mode => '2',:gene_id_str => @gene_id_str}) do %>
+						<span id='mode_off'> max100%</span><% end %>
+				<% else %>
+					<%= link_to({:action => 'getchart',:main_gene_id => @protein.gene_id,:material_id => @material.id,:mode => '1',:gene_id_str => @gene_id_str}) do %>
+						<span id='mode_off'> normal</span><% end %>
+						<span id='mode_on'> max100%</span>
+				<% end %>
+				　
+				<%if  @protein.organism == 1 %>
+				<a href="http://arabidopsis.org/servlets/TairObject?type=locus&amp;name=<%= @protein.gene_id %>" target="_blank">
+	  				<img src="/assets/tair.png" title="link to Tair locus page (new window)" alt="tair" width="20" height="20" />
+				</a>
+				<% end %>
+			</h1>
+			<div class="posttext">
+				<p>symbols      :<%= @protein.symbols.tr('#',',') %></p>
+				<p>	description :<%= @protein.description.tr('#',',') %></p>
+			</div>
+
+			<!-- select gel_no&gene_id -->
+		<%= form_tag({ :action => "getchartslist" }, { :id => "gel_no_form",:name => "gel_no_form" }) do %>
+					<%= hidden_field_tag :material_id, @material.id %>
+					<%= hidden_field_tag :gel_no,@selected_gel_no %>
+					<%= hidden_field_tag :main_gene_id , @protein.gene_id %>
+					<%= hidden_field_tag :mode, @mode %>
+					<%= hidden_field_tag :gene_id_str, @gene_id_str %>
+					<%= submit_tag 'gel_no_submit_button', :id =>"gel_no_submit_button" , :style => "display: none" %>
+
+			<!-- chart -->
+			<div id="chart">
+				<%= high_chart("graph", @graph) %>
+			</div>
+
+			<!-- weight table -->
+			<div id="weighttable">
+			<table class="weight_table" >
+				<tr>
+					<td class="colm_name">gel_no<td>
+						<% @material.materialweights.each do |weight| %>
+							<td class="gel<%= @material.grid_disp%>"><%if weight.weight>0 %><%= weight.gel_no %><% end %></td>
+						<% end %>
+				</tr>
+				<tr>
+					<td class="colm_name">mw<td>
+						<% @material.materialweights.each do |weight| %>
+							<td class="gel<%= @material.grid_disp%>"><%if weight.weight>0 %><%= weight.weight.round %><% end %></td>
+						<% end %>
+				</tr>
+			</table>
+			</div>
+			
+			<% end %>
+	</div>
+
+
