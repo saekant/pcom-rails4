@@ -1,15 +1,16 @@
-= \PCoM-DB ( previously unreleased version )
+= \PCoM-DB 
 
-rails4 supported version 
+This is a PCoM-DB<http://pcomdb.lowtem.hokudai.ac.jp/proteins/top> rails4 supported version (previously unreleased version )
  
 == About
 * ruby : 2.0.0p247
 * Rails : 4.0.1
 * Highcharts: 3.0.7
-* LazyHighCharts : 3.0.7
+* LazyHighCharts : 1.4.3
  
 == License
 
 Copyright (c) 2013 Saeka TAKABAYASHI
 
 Distributed under a Creative Commons Attribution 4.0 International license.
+
