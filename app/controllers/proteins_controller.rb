@@ -176,7 +176,7 @@ def getchartlist
 		@weights 		=   Materialweight.find_all_by_material_id(params[:material_id].to_i)
 
 		render 'proteins/getchartslist'
-#		render 'proteins/getchart'
+
 end
 
 ####################################
@@ -241,7 +241,6 @@ def getchartslist
 		#weight
 		@weights 		=   Materialweight.find_all_by_material_id(params[:material_id].to_i)
 
-#		render 'proteins/getchartslist'
 end
 
 ################
@@ -1178,20 +1177,14 @@ print params[:arabi_homolog_flg]
 
 		@material			=	Material.find(params[:material_id])
 		w_gene_id_str	=	params[:gene_id_list].gsub(/\r\n/,',').gsub(/\r/,',').gsub(/\n/,',')
-#print "w_gene_id_str :"
-#print w_gene_id_str
-#print "\n"
+
 		gene_id_arr	=	Array.new
 		gene_id_arr	=	w_gene_id_str.split(",")
-#print "gene_id_arr.length :"
-#print gene_id_arr.length
-#print "\n"
+
 		@gene_list_len		=	gene_id_arr.length
 
 		if(gene_id_arr.length >1 || gene_id_arr.length==1) then
-#print "gene_id_arr[0] :"
-#print gene_id_arr[0]
-#print "\n"
+
 			@protein1 = Protein.find_by_gene_id(gene_id_arr[0].strip)
 			if @protein1 !=nil then
 				results1			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein1.gene_id,:material_id=>params[:material_id])
@@ -1223,9 +1216,6 @@ print params[:arabi_homolog_flg]
 		end
 			
 		if(gene_id_arr.length >2 || gene_id_arr.length==2) then
-#print "gene_id_arr[1] :"
-#print gene_id_arr[1]
-#print "\n"
 			@protein2 = Protein.find_by_gene_id(gene_id_arr[1].strip)
 			if @protein2 !=nil then
 					results2			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein2.gene_id,:material_id=>params[:material_id])
@@ -1257,9 +1247,6 @@ print params[:arabi_homolog_flg]
 		end
 
 		if(gene_id_arr.length >3 || gene_id_arr.length==3) then
-#print "gene_id_arr[2] :"
-#print gene_id_arr[2]
-#print "\n"
 			@protein3 = Protein.find_by_gene_id(gene_id_arr[2].strip)
 			if @protein3 !=nil then
 					results3			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein3.gene_id,:material_id=>params[:material_id])
@@ -1291,9 +1278,6 @@ print params[:arabi_homolog_flg]
 		end
 		
 		if(gene_id_arr.length >4 || gene_id_arr.length==4) then
-#print "gene_id_arr[3] :"
-#print gene_id_arr[3]
-#print "\n"
 			@protein4 = Protein.find_by_gene_id(gene_id_arr[3].strip)
 			if @protein4 !=nil then
 					results4			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein4.gene_id,:material_id=>params[:material_id])
@@ -1325,9 +1309,6 @@ print params[:arabi_homolog_flg]
 		end
 
 		if(gene_id_arr.length >5 || gene_id_arr.length==5) then
-#print "gene_id_arr[4] :"
-#print gene_id_arr[4]
-#print "\n"
 			@protein5 = Protein.find_by_gene_id(gene_id_arr[4].strip)
 			if @protein5 !=nil then
 					results5			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein5.gene_id,:material_id=>params[:material_id])
@@ -1359,9 +1340,6 @@ print params[:arabi_homolog_flg]
 		end
 
 		if(gene_id_arr.length >6 || gene_id_arr.length==6) then
-#print "gene_id_arr[5] :"
-#print gene_id_arr[5]
-#print "\n"
 			@protein6 = Protein.find_by_gene_id(gene_id_arr[5].strip)
 			if @protein6 !=nil then
 					results6			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein6.gene_id,:material_id=>params[:material_id])
@@ -1393,9 +1371,6 @@ print params[:arabi_homolog_flg]
 		end
 
 		if(gene_id_arr.length >7 || gene_id_arr.length==7) then
-#print "gene_id_arr[6] :"
-#print gene_id_arr[6]
-#print "\n"
 			@protein7 = Protein.find_by_gene_id(gene_id_arr[6].strip)
 			if @protein7 !=nil then
 					results7			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein7.gene_id,:material_id=>params[:material_id])
@@ -1427,9 +1402,6 @@ print params[:arabi_homolog_flg]
 		end
 
 		if(gene_id_arr.length >8 || gene_id_arr.length==8) then
-#print "gene_id_arr[7] :"
-#print gene_id_arr[7]
-#print "\n"
 			@protein8 = Protein.find_by_gene_id(gene_id_arr[7].strip)
 			if @protein8 !=nil then
 					results8			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein8.gene_id,:material_id=>params[:material_id])
@@ -1461,9 +1433,6 @@ print params[:arabi_homolog_flg]
 		end
 		
 		if(gene_id_arr.length >9 || gene_id_arr.length==9) then
-#print "gene_id_arr[8] :"
-#print gene_id_arr[8]
-#print "\n"
 			@protein9 = Protein.find_by_gene_id(gene_id_arr[8].strip)
 			if @protein9 !=nil then
 					results9			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein9.gene_id,:material_id=>params[:material_id])
@@ -1495,9 +1464,6 @@ print params[:arabi_homolog_flg]
 		end
 	
 				if(gene_id_arr.length >10 || gene_id_arr.length==10) then
-#print "gene_id_arr[9] :"
-#print gene_id_arr[9]
-#print "\n"
 			@protein10 = Protein.find_by_gene_id(gene_id_arr[9].strip)
 			if @protein10 !=nil then
 					results10			=	Msresult.where('gene_id = :gene_id AND material_id =:material_id',:gene_id =>@protein10.gene_id,:material_id=>params[:material_id])
@@ -1541,7 +1507,6 @@ print params[:arabi_homolog_flg]
 ################
 	def top
 		render :layout => 'toph'
-
 	end
 
 ################

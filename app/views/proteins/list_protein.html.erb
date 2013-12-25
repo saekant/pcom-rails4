@@ -15,7 +15,6 @@
 
 		<%= form_tag({ :action => :search_list_protein_by_symbols_or_description }, { :id => :search_key_form_by_symbols_or_description,:name => :search_key_form_by_symbols_or_description }) do %>
 			<%= hidden_field_tag :material_id, @material.id %>
-
 			<table class="key_table">
 				<tr>
 					<td class="posttext" rowspan="2">　2>　</td>
@@ -27,7 +26,6 @@
 					<td class="posttext">description:</td>
 					<td ><%= text_field_tag :description ,@search_description,{ :class => 'description',:maxlength => '200' } %></td>	
 				</tr>
-				
 			</table>
 			<% end %>
 

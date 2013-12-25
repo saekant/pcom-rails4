@@ -54,18 +54,13 @@ class Lazychart
 							cursor: 'pointer',
 							point: {
 								events: {
-									click: %| function(){ document.gel_no_form.gene_id_str.value ='testtest';alert('abc');alert('defgh'); } |.js_code
+									click: %| function(){ alert('test'); } |.js_code
 								}
 							}
 						}
 					})
 					ylist.each {|key|
-print "LAZYCHART######START############"
-print key[0]
-print key[1]
-print "LAZYCHART######END##############"
 						f.series( :name => key[0], :data => key[1])
-#						f.series( name: key[0], data: key[1])
 					}
 		end
 
