@@ -1,21 +1,15 @@
-PCoM-DB ( previously unreleased version )
-======================
+= \PCoM-DB ( previously unreleased version )
+
 rails4 supported version 
  
- About
-------
-+   `ruby` : 2.0.0p247
+== About
+* ruby : 2.0.0p247
+* Rails : 4.0.1
+* Highcharts: 3.0.7
+* LazyHighCharts : 3.0.7
  
-+   `Rails` : 4.0.1
- 
-+   `Highcharts` : 3.0.7
- 
-+   `LazyHighCharts` : 3.0.7
- 
-License
-----------
-Copyright &copy; 2013 Saeka TAKABAYASHI 
-Distributed under a [Creative Commons Attribution 4.0 International license.].
+== License
 
-[Creative Commons Attribution 4.0 International license.]: http://creativecommons.org/licenses/by/4.0/
+Copyright (c) 2013 Saeka TAKABAYASHI
 
+Distributed under a Creative Commons Attribution 4.0 International license.
